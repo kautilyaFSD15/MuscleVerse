@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gym Body Parts Showcase</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2d80a4, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* 🔥 TITLE */
+.title {
+    text-align: center;
+    font-size: 4.2rem;
+    font-weight: 900;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    background: linear-gradient(90deg, #ff0000, #ff7b00, #ffe600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 10px rgba(255, 0, 0, 0.6),
+        0 0 25px rgba(255, 123, 0, 0.6),
+        0 0 45px rgba(255, 230, 0, 0.5);
+
+    transform: skewX(-6deg);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.card {
+    position: relative;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    background-size: cover;
+    background-position: center;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    background: rgba(0,0,0,0.35);
+}
+
+.card:hover {
+    transform: translateY(-20px) scale(1.08);
+    z-index: 10;
+}
+
+/* CONTENT */
+.content {
+    position: absolute;
+    bottom: 0;
+    padding: 25px;
+    z-index: 1;
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #00f2fe;
+}
+
+.content p {
+    margin-top: 8px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* IMAGES */
+.arms { background-image: url("https://hips.hearstapps.com/hmg-prod/images/bodybuilder-preparing-a-barbell-on-a-power-rack-in-royalty-free-image-1604683794.?crop=0.750xw:1.00xh;0.250xw,0&resize=640:*"); }
+.chest { background-image: url("https://gym-mikolo.com/cdn/shop/articles/smith-chest-workou.png?v=1690966889&width=2048"); }
+.legs { background-image: url("https://steelsupplements.com/cdn/shop/articles/shutterstock_1689858364_52d48fcf-af23-42c1-a896-8387a3509ca2_1000x.jpg?v=1767036431"); }
+.shoulders { background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuHcgf9RrYVE6vjlzrXQeqVd_lw-cx5uSk8g&s"); }
+.abs { background-image: url("https://cdn.mos.cms.futurecdn.net/bVHCCLBjn9qKXWmUNXuiXd.jpg"); }
+.back { background-image: url("https://miro.medium.com/v2/resize:fit:1000/1*pVU7952BjkP72qpjJu_Ihw.jpeg"); }
+.cardio { background-image: url("https://hips.hearstapps.com/hmg-prod/images/cardio-equipment1-6908cb9a0ec0e.jpg?crop=0.8666666666666667xw:1xh;center,top&resize=1200:*"); }
+
+/* GLOW */
+.arms:hover { box-shadow: 0 30px 60px rgba(255,0,0,0.6); }
+.chest:hover { box-shadow: 0 30px 60px rgba(0,255,255,0.6); }
+.legs:hover { box-shadow: 0 30px 60px rgba(0,255,0,0.6); }
+.shoulders:hover { box-shadow: 0 30px 60px rgba(255,165,0,0.6); }
+.abs:hover { box-shadow: 0 30px 60px rgba(138,43,226,0.6); }
+.back:hover { box-shadow: 0 30px 60px rgba(255,20,147,0.6); }
+.cardio:hover { box-shadow: 0 30px 60px rgba(255,140,0,0.7); }
+
+/* BACK BUTTON */
+.back-wrapper {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.back-btn {
+    padding: 15px 45px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(90deg, #ff0000, #ff7b00);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1 class="title">Gym Trained Body Parts</h1>
+
+<div class="grid">
+
+<div class="card arms" onclick="openPage('arm.html')">
+    <div class="content"><h2>Arms</h2><p>Biceps & triceps power</p></div>
+</div>
+
+<div class="card chest" onclick="openPage('chest.html')">
+    <div class="content"><h2>Chest</h2><p>Strong pecs</p></div>
+</div>
+
+<div class="card legs" onclick="openPage('leg.html')">
+    <div class="content"><h2>Legs</h2><p>Lower body strength</p></div>
+</div>
+
+<div class="card shoulders" onclick="openPage('shoulder.html')">
+    <div class="content"><h2>Shoulders</h2><p>Wide delts</p></div>
+</div>
+
+<div class="card abs" onclick="openPage('abs.html')">
+    <div class="content"><h2>Abs</h2><p>Core strength</p></div>
+</div>
+
+<div class="card back" onclick="openPage('back.html')">
+    <div class="content"><h2>Back</h2><p>V-shape power</p></div>
+</div>
+
+<div class="card cardio" onclick="openPage('cardio.html')">
+    <div class="content"><h2>Cardio</h2><p>Fat burn & endurance</p></div>
+</div>
+
+</div>
+
+<div class="back-wrapper">
+<button class="back-btn" onclick="location.href='index.html'">⬅ Back</button>
+</div>
+</div>
+
+<script>
+function openPage(page) {
+    window.location.href = page;
+}
+</script>
+
+</body>
+</html>

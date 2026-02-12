@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodybuilding Hall of Fame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1579758629938-03607ccdbaba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
+            width:auto;
+        }
+
+        @keyframes bgZoom {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: fadeDown 2s ease;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeUp 2s ease;
+        }
+
+        @keyframes fadeDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .legend {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 1s ease forwards;
+        }
+
+        .legend:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .legend:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .legend:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+
+        .legend:nth-child(4) {
+            animation-delay: 1.2s;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .legend img {
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            object-fit: cover;
+        }
+
+        .legend h2 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        .legend p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .achievements {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            margin: 40px auto;
+            border-radius: 12px;
+            max-width: 900px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            animation: fadeUp 1s ease;
+        }
+
+        .achievements h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .achievements table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+        }
+
+        .achievements th,
+        .achievements td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .achievements th {
+            background: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bodybuilding Hall of Fame</h1>
+        <p>Celebrating the legends who transformed bodybuilding into a global phenomenon</p>
+    </header>
+
+    <div class="container">
+        <div class="legend">
+            <img src="https://www.greatestphysiques.com/wp-content/uploads/2017/02/finish.jpg" alt="Ronnie Coleman">
+            <div>
+                <h2>Ronnie Coleman</h2>
+                <p>Ronnie Coleman, born on May 13, 1964, in Monroe, Louisiana, is widely regarded as one of the most
+                    massive and strongest bodybuilders in history. Standing around 5’11” and competing at over 300
+                    pounds in his prime, Ronnie’s size and muscular density were unparalleled. He dominated professional
+                    bodybuilding, winning eight consecutive Mr. Olympia titles from 1998 to 2005, tying the all-time
+                    record. Known for his rock-hard conditioning, colossal arms, thick legs, and incredible back
+                    development, he redefined what extreme muscle mass meant in bodybuilding. Ronnie was also famous for
+                    his legendary training intensity, often lifting enormous weights in the gym, coining phrases like
+                    “Yeah buddy!” and “Light weight, baby!” Despite numerous injuries from heavy training, his passion
+                    and dedication remain unmatched. Beyond competitions, Ronnie has inspired millions worldwide through
+                    motivational content, documentaries, and appearances. His combination of sheer size, strength, and
+                    determination cements his legacy as one of the greatest bodybuilders ever.</p>
+            </div>
+        </div>
+
+        <div class="legend">
+            <img src="https://i.redd.it/zvdkl6xz26sa1.jpg" alt="Arnold Schwarzenegger">
+            <div>
+                <h2>Arnold Schwarzenegger</h2>
+                <p>Arnold Schwarzenegger, born on July 30, 1947, in Thal, Austria, is one of the most iconic
+                    bodybuilders of all time. Standing 6’2” and known for his perfect symmetry, proportion, and
+                    aesthetic physique, Arnold became a seven-time Mr. Olympia winner (1970–1975, 1980). Unlike modern
+                    bodybuilders, Arnold focused on achieving a balanced, visually pleasing body with wide shoulders, a
+                    narrow waist, and sculpted muscles. His charisma and stage presence helped popularize bodybuilding
+                    worldwide, especially after starring in Pumping Iron and blockbuster films like The Terminator.
+                    Arnold combined size with aesthetics, inspiring generations of athletes to value both muscle mass
+                    and proportion. Beyond bodybuilding, he became a successful actor, entrepreneur, and the 38th
+                    Governor of California, blending fitness, politics, and entertainment. His influence on the sport is
+                    immeasurable, as he not only set competitive standards but also elevated bodybuilding into
+                    mainstream culture. Arnold’s legacy remains a symbol of discipline, ambition, and the power of
+                    combining aesthetics with strength.</p>
+            </div>
+        </div>
+
+        <div class="legend">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGGxWZR7O31qiOzolt_u0kPT_4Zn--VzM_zA&s"
+                alt="Chris Bumstead">
+            <div>
+                <h2>Chris Bumstead (CBum)</h2>
+                <p>Chris Bumstead, born on February 2, 1995, in Canada, is a modern bodybuilding superstar in the
+                    Classic Physique division. Standing 6’1” and competing around 220 pounds, Chris is admired for his
+                    perfect symmetry, aesthetic lines, and classic “golden era” physique reminiscent of legends like
+                    Arnold Schwarzenegger. He has won the Mr. Olympia Classic Physique title four times consecutively
+                    (2019–2022), dominating the division with his sculpted chest, shoulders, back, and proportionate
+                    legs. Unlike extreme mass-focused bodybuilders, CBUM emphasizes balance, flow, and stage presence,
+                    blending size with elegance. Offstage, he is a fitness influencer, entrepreneur, and role model,
+                    sharing training tips, nutrition advice, and motivational content with millions of fans worldwide.
+                    Chris’s dedication to classic aesthetics has revived interest in proportionate bodybuilding,
+                    inspiring younger athletes to value symmetry and elegance alongside muscle size. His discipline,
+                    hard work, and commitment make him a modern icon in the bodybuilding world.</p>
+            </div>
+        </div>
+
+        <div class="legend">
+            <img src="https://i.namu.wiki/i/c2VA2MUaaicBAB6Cru2KPZQOgCim9qu4h9KPxiiN5EdfAfTvrNHGNtlhS_xTuEmYPnaMZJr7r844UPN6Qnhw2A.webp"
+                alt="Jay Cutler">
+            <div>
+                <h2>Jay Cutler</h2>
+                <p>Jay Cutler, born on August 3, 1973, in Massachusetts, is an American bodybuilder known for his
+                    enormous size, thick musculature, and professional longevity. Standing 5’9” and competing around
+                    275–290 pounds in peak condition, Jay’s massive arms, chest, legs, and back set him apart from
+                    competitors. He won four Mr. Olympia titles (2006, 2007, 2009, 2010) and consistently challenged
+                    legends like Ronnie Coleman, making him one of the most formidable athletes in bodybuilding history.
+                    Jay’s combination of size and conditioning made him a fan favorite, admired for his work ethic and
+                    stage presentation. Beyond competing, he launched fitness businesses, supplement lines, and
+                    continues mentoring aspiring bodybuilders. Jay Cutler’s legacy is defined by his immense muscle
+                    mass, competitive spirit, and influence in shaping modern professional bodybuilding standards.</p>
+            </div>
+        </div>
+        <div class="legend">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrm9jefAFkhvfrd1lOs8ip1BXz8MqlOiZ1hw&s"
+                alt="Dorian Yates">
+            <div>
+                <h2>Dorian Yates</h2>
+                <p>Dorian Yates is a legendary British bodybuilder, widely regarded as one of the most dominant figures
+                    in the history of the sport. Born on April 19, 1962, in Sutton Coldfield, England, he rose from a
+                    challenging childhood to redefine professional bodybuilding with his unique training style and
+                    unmatched intensity.
+
+                    Nicknamed “The Shadow” for his quiet persona and dramatic competition entrances, Yates
+                    revolutionized bodybuilding in the 1990s. He won the prestigious Mr. Olympia title six consecutive
+                    times (1992–1997), becoming one of the few athletes to achieve such dominance. His physique was
+                    famous for its unprecedented size, granite-like conditioning, and exceptional back development,
+                    setting new standards for muscle density and detail.
+
+                    Yates popularized High-Intensity Training (HIT), a method focusing on short, extremely intense
+                    workouts rather than long training sessions. This approach, paired with meticulous nutrition,
+                    allowed him to maximize growth while minimizing injury risks.
+
+                    After retiring due to injuries in 1997, Dorian transitioned into business, launching fitness
+                    enterprises, nutrition brands, and coaching programs. He also became an advocate for mental
+                    well-being, sharing insights from his personal journey. Yates remains a towering influence in the
+                    bodybuilding world, respected for his discipline, innovation, and lasting contribution to the sport.
+                </p>
+            </div>
+        </div>
+        <div class="legend">
+            <img src="https://www.thesun.co.uk/wp-content/uploads/2024/03/2016-phil-heath-wins-sixth-889303937.jpg?strip=all&w=650"
+                alt="Phil Heath">
+            <div>
+                <h2>Phil Heath</h2>
+                <p>Phil Heath, nicknamed “The Gift,” is one of the most successful professional bodybuilders in modern
+                    history. Born on December 18, 1979, in Seattle, Washington, he began his athletic career as a
+                    college basketball player before transitioning to bodybuilding in 2002. With a combination of
+                    exceptional genetics, symmetry, and relentless discipline, Heath quickly rose through the ranks of
+                    the sport.
+
+                    He earned his IFBB Pro Card in 2005 and went on to dominate the Mr. Olympia stage, winning the
+                    prestigious title seven times consecutively (2011–2017). This achievement tied him with legends like
+                    Arnold Schwarzenegger and placed him among the all-time greats, just behind Ronnie Coleman and Lee
+                    Haney, who hold eight titles each.
+
+                    Phil Heath is known for his round, full muscle bellies, razor-sharp conditioning, and near-perfect
+                    proportions, which made his physique stand out even among elite competitors. Offstage, he has built
+                    a reputation as an entrepreneur, motivational speaker, and ambassador for health and fitness.
+
+                    Despite injuries and tough rivalries later in his career, Heath’s impact on professional
+                    bodybuilding remains immense. His dedication, professionalism, and champion mindset continue to
+                    inspire athletes worldwide, cementing his status as one of the sport’s most iconic figures.</p>
+            </div>
+        </div>
+
+        <div class="legend">
+            <img src="https://www.greatestphysiques.com/wp-content/uploads/2017/04/sangram-chougule-mr-universe.jpg"
+                alt="Sangram Chougule">
+            <div>
+                <h2>Sangram Chougule</h2>
+                <p>
+                    Sangram Chougule is one of India’s most prominent professional bodybuilders, known for his
+                    impressive physique, dedication, and contribution to fitness culture. Born on March 28, 1982, in
+                    Kolhapur, Maharashtra, Sangram developed a passion for bodybuilding at a young age. Over the years,
+                    he carved a niche for himself in the national and international bodybuilding scene through
+                    relentless training, strict diet, and disciplined lifestyle.
+
+                    Sangram has earned multiple Mr. India titles and represented India in several international
+                    competitions, including Mr. Universe, where he showcased exceptional muscularity, symmetry, and
+                    conditioning. Standing around 5’8” with a well-balanced physique, he is admired for his massive
+                    arms, defined chest, and sculpted back, making him one of the most aesthetic bodybuilders in India.
+
+                    Beyond competing, Sangram Chougule is a fitness entrepreneur and mentor. He runs fitness academies
+                    and provides training guidance to aspiring bodybuilders, inspiring a new generation of athletes. He
+                    is also active on social media, sharing workout routines, nutrition advice, and motivational content
+                    to promote healthy lifestyles.
+
+                    Sangram’s journey reflects hard work, discipline, and perseverance, proving that consistent effort
+                    and dedication can lead to national and international recognition. He remains a role model for
+                    Indian bodybuilding, representing India with pride on the global stage.</p>
+            </div>
+        </div>
+        <div class="legend">
+            <img src="https://fitnesspointt.wordpress.com/wp-content/uploads/2014/08/suhas6.jpg?w=584">
+            <div>
+                <h2>Suhas Khamkar</h2>
+                <p>Suhas Khamkar is a renowned Indian professional bodybuilder and fitness ambassador. Born on 9 August
+                    1980 in Kolhapur, Maharashtra, he was inspired by traditional wrestlers and bodybuilders from a
+                    young age. With relentless training and determination, he rose to become one of India’s greatest
+                    athletes in the sport.
+
+                    He created history in 2010 by becoming the first Indian to win the Mr. Asia title, bringing global
+                    attention to Indian bodybuilding. Suhas has also claimed over 16 national titles and multiple Mr.
+                    India championships, along with impressive performances at Mr. Universe and Mr. Olympia Amateur
+                    contests.
+
+                    Standing about 5’6”, he is admired for his muscular balance, sharp conditioning, and strong stage
+                    presence. Beyond his achievements, Suhas works to inspire and mentor upcoming fitness enthusiasts,
+                    promoting healthy lifestyles and professional training.
+
+                    Despite limited resources early in his career, his persistence and passion helped him overcome
+                    obstacles and achieve international fame. Suhas Khamkar remains a symbol of discipline, hard work,
+                    and the growing strength of Indian bodybuilding.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="achievements">
+        <h2>Major Competition Wins</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bodybuilder</th>
+                    <th>Competition</th>
+                    <th>Years Won</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ronnie Coleman</td>
+                    <td>Mr. Olympia</td>
+                    <td>1998–2005</td>
+                </tr>
+                <tr>
+                    <td>Arnold Schwarzenegger</td>
+                    <td>Mr. Olympia</td>
+                    <td>1970–1975, 1980</td>
+                </tr>
+                <tr>
+                    <td>Chris Bumstead</td>
+                    <td>Classic Physique Olympia</td>
+                    <td>2019–2023</td>
+                </tr>
+                <tr>
+                    <td>Jay Cutler</td>
+                    <td>Mr. Olympia</td>
+                    <td>2006-2010</td>
+                </tr>
+                <tr>
+                    <td>Dorian Yates</td>
+                    <td>Mr. Olympia</td>
+                    <td>1992–1997</td>
+                </tr>
+                <tr>
+                    <td>Phil Heath</td>
+                    <td>Mr. Olympia</td>
+                    <td>2011–2017</td>
+                </tr>
+                <tr>
+                    <td>Sangram Chougule</td>
+                    <td>Mr. Universe</td>
+                    <td>2012</td>
+                </tr>
+                <tr>
+                    <td>Suhas Khamkar</td>
+                    <td>Mr. Asia</td>
+                    <td>2010</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+   
+    <button onclick="goBack()" style="margin:20px auto; display:block; padding:10px 20px; background:#007bff; color:white; border:none; border-radius:5px; font-size:16px; cursor:pointer;">⬅ Back</button>
+
+    <script>
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>

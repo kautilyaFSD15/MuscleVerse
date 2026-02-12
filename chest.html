@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chest Exercises – Gym Guide</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 3.6rem;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff0000, #ff9f00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .exercise {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 55px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 22px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .exercise img {
+            width: 100%;
+            border-radius: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .exercise h2 {
+            color: #00f2fe;
+            margin-bottom: 8px;
+        }
+
+        .exercise h3 {
+            margin-top: 12px;
+            color: #ffcc00;
+        }
+
+        .exercise p {
+            line-height: 1.6;
+        }
+
+        .exercise ul {
+            margin-left: 20px;
+        }
+
+        .exercise li {
+            margin-bottom: 6px;
+        }
+
+        /* 🔙 BACK BUTTON */
+        .back-wrapper {
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .back-btn {
+            padding: 14px 45px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(90deg, #ff0000, #ff7b00);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.4s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 123, 0, 0.9);
+        }
+
+        .back-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media(max-width:900px) {
+            .exercise {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="title">Chest Exercises</h1>
+
+        <!-- 1. BARBELL BENCH PRESS -->
+        <div class="exercise">
+            <img src="https://media.tenor.com/0hoNLcggDG0AAAAM/bench-press.gif" alt="Bench Press">
+            <div>
+                <h2>1. Barbell Bench Press</h2>
+                <p><strong>Target Muscles:</strong> Chest, Triceps, Front Delts</p>
+                <h3>How to Perform</h3>
+                <p>Lie on bench, grip bar slightly wider than shoulders, lower to mid-chest, press up.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>Beginner: 3 × 10</li>
+                    <li>Intermediate: 4 × 8</li>
+                    <li>Advanced: 5 × 5</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Best chest mass builder</li>
+                    <li>Improves upper-body strength</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Shoulder strain if elbows flare</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. INCLINE DUMBBELL PRESS -->
+        <div class="exercise">
+            <img src="https://i.pinimg.com/originals/f4/72/94/f47294c0af7d4dc0e55b83a6ce56167b.gif"
+                alt="Incline Dumbbell Press">
+            <div>
+                <h2>2. Incline Dumbbell Press</h2>
+                <p><strong>Target Muscles:</strong> Upper Chest, Shoulders</p>
+                <h3>How to Perform</h3>
+                <p>Set bench to incline, press dumbbells upward, squeeze chest at top.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>3–4 × 8–12</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Builds upper chest</li>
+                    <li>Better range of motion</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Harder to control heavy weight</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. CHEST FLY -->
+        <div class="exercise">
+            <img src="https://cdn.jefit.com/assets/img/exercises/gifs/41.gif" alt="Chest Fly">
+            <div>
+                <h2>3. Chest Fly (Dumbbell / Cable)</h2>
+                <p><strong>Target Muscles:</strong> Inner Chest</p>
+                <h3>How to Perform</h3>
+                <p>Open arms wide, bring hands together slowly, squeeze chest hard.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>3 × 12–15</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Great chest definition</li>
+                    <li>Improves muscle stretch</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Shoulder risk if overstretched</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. PUSH-UPS -->
+        <div class="exercise">
+            <img src="https://cdn.jefit.com/assets/img/exercises/gifs/47.gif" alt="Push Ups">
+            <div>
+                <h2>4. Push-Ups</h2>
+                <p><strong>Target Muscles:</strong> Chest, Triceps, Core</p>
+                <h3>How to Perform</h3>
+                <p>Hands shoulder-width, lower chest close to floor, push up fully.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>3 × 15–25</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>No equipment needed</li>
+                    <li>Improves endurance</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Limited overload for growth</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5. CHEST DIPS -->
+        <div class="exercise">
+            <img src="https://gymvisual.com/img/p/6/3/3/4/6334.gif" alt="Chest Dips">
+            <div>
+                <h2>5. Chest Dips</h2>
+                <p><strong>Target Muscles:</strong> Lower Chest, Triceps</p>
+                <h3>How to Perform</h3>
+                <p>Lean forward, lower body slowly, push back using chest.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>3 × 10–15</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Excellent lower-chest builder</li>
+                    <li>Functional strength</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Shoulder stress if too deep</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 🔙 BACK BUTTON -->
+        <div class="back-wrapper">
+            <button class="back-btn" onclick="goBack()">⬅ Back</button>
+        </div>
+
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "Exercise.html";
+        }
+    </script>
+
+</body>
+
+</html>

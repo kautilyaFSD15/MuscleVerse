@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplement Recommender</title>
+  <style>
+    body {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://www.gymsupplementsus.com/cdn/shop/collections/whey-protein_-collection-at-www.gymsupplementsus.com.jpg?v=1668158278&width=1296") no-repeat center center fixed;
+      background-size: cover;
+      color: #f5f5f5;
+      text-align: center;
+      padding: 50px;
+      letter-spacing: 1px;
+    }
+    
+
+    /* Header Section */
+    .header-box {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffcc;
+      max-width: 700px;
+      margin: auto;
+      backdrop-filter: blur(4px);
+      margin-bottom: 30px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00ffcc; }
+      to { box-shadow: 0 0 25px #00e6b8; }
+    }
+
+    h1 {
+      color: #ffcc00;
+      font-size: 50px;
+      font-weight: 900;
+      text-shadow: 4px 4px 12px rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #f1f1f1;
+      font-weight: 500;
+      text-shadow: 1px 1px 4px #000;
+      letter-spacing: 1px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      padding: 25px;
+      max-width: 450px;
+      margin: 20px auto;
+      box-shadow: 0 0 25px rgba(0,0,0,0.9);
+      transition: 0.3s ease-in-out;
+      backdrop-filter: blur(6px);
+      border: 1px solid #ffcc00;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background: linear-gradient(45deg, #00ffcc, #009977);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      background: linear-gradient(45deg, #00e6b8, #008866);
+      box-shadow: 0 0 15px #00ffcc;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      background: rgba(20,20,20,0.85);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ffcc00;
+      color: #ffcc00;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    /* Gym Message Box */
+    .gym-info {
+      max-width: 700px;
+      margin: 40px auto 0;
+      background: rgba(0,0,0,0.75);
+      padding: 30px;
+      border-radius: 12px;
+      font-size: 20px;
+      line-height: 1.7;
+      border-left: 6px solid #ff0000;
+      text-align: left;
+      color: #ffe6e6;
+      font-weight: 500;
+      box-shadow: 0 0 25px rgba(255,0,0,0.7);
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #ff9800, #ff5722);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 50px;
+      border: none;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .icon { margin-left: 10px; background: white; border-radius: 50%; padding: 5px; }
+    footer { margin-top: 50px; font-size: 14px; color: #ccc; }
+
+    #music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00ffcc;
+      border-radius: 50%;
+      color: #00ffcc;
+      font-size: 24px;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: 0.3s;
+    }
+
+    #music-btn:hover {
+      background: #00ffcc;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <h1>🏋 SUPPLEMENT RECOMMENDER</h1>
+    <div class="subtitle">Your Body. Your Goals. Your Supplements. Powered by Science & Discipline.</div>
+  </div>
+
+  <div class="card">
+    <label for="goal">Select your fitness goal:</label>
+    <select id="goal">
+      <option value="">-- Choose Goal --</option>
+      <option value="muscle">Build Muscle</option>
+      <option value="weightloss">Lose Weight</option>
+      <option value="endurance">Increase Endurance</option>
+      <option value="recovery">Faster Recovery</option>
+    </select>
+
+    <label for="diet">Diet Preference:</label>
+    <select id="diet">
+      <option value="">-- Choose Diet --</option>
+      <option value="veg">Vegetarian</option>
+      <option value="nonveg">Non-Vegetarian</option>
+      <option value="vegan">Vegan</option>
+    </select>
+
+    <button onclick="recommend()">Get Recommendation</button>
+    <div id="result"></div>
+
+    
+
+    <audio id="bg-music" loop hidden>
+      <source src="suppliment_bgm.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Gym Info Section -->
+  <div class="gym-info">
+    <h2>🔥 TRAIN LIKE A BEAST • LOOK LIKE A LEGEND 🔥</h2>
+    <p>
+      This Supplement Recommender is built for real athletes — the ones who don't skip leg day, the ones who grind even when nobody's watching.
+    </p>
+    <p>
+      Whether you're building muscle, cutting fat, boosting endurance, or recovering faster — we've designed this tool to help you choose science-backed supplements that fuel real results.
+    </p>
+    <p>
+      💥 *No excuses. No shortcuts. Just pure discipline.* 💥
+    </p>
+  </div>
+
+  <div id="music-btn">▶️</div>
+
+  <br><a href="index.html" class="button">Go Back</a>
+
+  <footer>
+    © <span id="year"></span> Muscle Verse • Built with 💪 by Kautilya Shukla.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function recommend() {
+      let goal = document.getElementById("goal").value;
+      let diet = document.getElementById("diet").value;
+      let result = document.getElementById("result");
+
+      if (!goal || !diet) {
+        result.innerHTML = "⚠ Please select both fitness goal and diet preference!";
+        return;
+      }
+
+      let recommendation = "";
+
+      if (goal === "muscle") {
+        recommendation = "💪 Whey Protein, Creatine, BCAAs";
+        if (diet === "vegan") recommendation = "🌱 Plant Protein, Creatine, BCAAs";
+      } else if (goal === "weightloss") {
+        recommendation = "🔥 Fat Burners, L-Carnitine, Whey Protein (Isolate)";
+        if (diet === "vegan") recommendation = "🌱 Green Tea Extract, Plant Protein, CLA";
+      } else if (goal === "endurance") {
+        recommendation = "🏃 Beta-Alanine, Electrolytes, Citrulline Malate";
+      } else if (goal === "recovery") {
+        recommendation = "🛌 Glutamine, Omega-3, BCAAs";
+      }
+
+      result.innerHTML = `<b>Recommended Supplements:</b><br>${recommendation}`;
+    }
+
+    // Music Controls
+    document.addEventListener("DOMContentLoaded", () => {
+      const audio = document.getElementById("bg-music");
+      const btn = document.getElementById("music-btn");
+      audio.volume = 0.5;
+
+      let isPlaying = false;
+
+      function toggleMusic() {
+        if (isPlaying) {
+          audio.pause();
+          btn.textContent = "▶️";
+          isPlaying = false;
+        } else {
+          audio.play().then(() => {
+            btn.textContent = "⏸️";
+            isPlaying = true;
+          });
+        }
+      }
+
+      btn.addEventListener("click", toggleMusic);
+      document.body.addEventListener("click", () => {
+        if (!isPlaying) toggleMusic();
+      }, { once: true });
+    });
+  </script>
+</body>
+</html>

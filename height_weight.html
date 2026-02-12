@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Height-Weight Chart & BMI Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      background: url('https://png.pngtree.com/thumb_back/fw800/background/20240726/pngtree-yellow-dumbbell-and-weight-scale-on-fitness-mat-image_15927717.jpg') no-repeat center center/cover;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,229,255,0.6);
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, #ff0000, #ff8c00, #ffd700, #00e5ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .table-container {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 30px;
+      border: 2px solid #00e5ff;
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #00e5ff;
+      padding: 6px;
+      text-align: center;
+    }
+
+    th {
+      background: #00e5ff;
+      color: black;
+      font-weight: bold;
+    }
+
+    td {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .form-box {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0,229,255,0.4);
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    /* 🔹 Neon Style Buttons */
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(90deg, #00e5ff, #00bfff);
+      font-weight: bold;
+      color: black;
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.7);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #00bfff, #00e5ff);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 1);
+    }
+
+    /* 🔹 Go Back Button (Matching Theme) */
+    .back-btn {
+      display: inline-block;
+      margin: 30px auto 0;
+      background: linear-gradient(90deg, #00e5ff, #00bfff);
+      color: black;
+      font-weight: bold;
+      padding: 10px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.7);
+      transition: all 0.3s ease;
+      text-align: center;
+      display: block;
+      width: fit-content;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(90deg, #00bfff, #00e5ff);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 1);
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Height - Weight Chart</h1>
+    <div class="table-container">
+      <table id="chartTable">
+        <tr>
+          <th>Height (cm)</th>
+          <th>Underweight (&lt;18.5 BMI)</th>
+          <th>Normal (18.5–24.9)</th>
+          <th>Overweight (25–29.9)</th>
+          <th>Obese (30+)</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="form-box">
+      <h2>Check Your BMI</h2>
+      <input type="number" id="height" placeholder="Height (cm)">
+      <input type="number" id="weight" placeholder="Weight (kg)">
+      <br>
+      <button onclick="checkBMI()">Check</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="index.html" class="back-btn">⬅ Go Back</a>
+  </div>
+
+  <script>
+    function generateChart() {
+      const tbl = document.getElementById('chartTable');
+      for (let h = 140; h <= 190; h++) {
+        const m = h / 100;
+        const u = (18.5 * m * m).toFixed(1),
+              nmax = (24.9 * m * m).toFixed(1),
+              omax = (29.9 * m * m).toFixed(1),
+              omin = nmax;
+        tbl.innerHTML += `
+          <tr>
+            <td>${h}</td>
+            <td>< ${u} kg</td>
+            <td>${u}–${nmax} kg</td>
+            <td>${omin}–${omax} kg</td>
+            <td>> ${omax} kg</td>
+          </tr>`;
+      }
+    }
+
+    function checkBMI() {
+      const h = parseFloat(document.getElementById('height').value);
+      const w = parseFloat(document.getElementById('weight').value);
+      const res = document.getElementById('result');
+      if (!h || !w || h <= 0 || w <= 0) {
+        res.innerHTML = "⚠️ Please enter valid values!";
+        res.style.color = 'yellow';
+        return;
+      }
+      const bmi = (w / ((h / 100) * (h / 100))).toFixed(1);
+      let msg = `Your BMI is ${bmi} — `;
+      if (bmi < 18.5) msg += `<span style="color:skyblue">Underweight</span>`;
+      else if (bmi <= 24.9) msg += `<span style="color:lightgreen">Normal</span>`;
+      else if (bmi <= 29.9) msg += `<span style="color:orange">Overweight</span>`;
+      else msg += `<span style="color:red">Obese</span>`;
+      res.innerHTML = msg;
+    }
+
+    generateChart();
+  </script>
+</body>
+</html>

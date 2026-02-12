@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Back Exercises – Gym Guide</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 3.6rem;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff0000, #ff9f00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .exercise {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 55px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 22px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .exercise img {
+            width: 100%;
+            border-radius: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .exercise h2 {
+            color: #00f2fe;
+            margin-bottom: 8px;
+        }
+
+        .exercise h3 {
+            margin-top: 12px;
+            color: #ffcc00;
+        }
+
+        .exercise p {
+            line-height: 1.6;
+        }
+
+        .exercise ul {
+            margin-left: 20px;
+        }
+
+        .exercise li {
+            margin-bottom: 6px;
+        }
+
+        /* 🔙 BACK BUTTON */
+        .back-wrapper {
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .back-btn {
+            padding: 14px 45px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(90deg, #ff0000, #ff7b00);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.4s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 123, 0, 0.9);
+        }
+
+        .back-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media(max-width:900px) {
+            .exercise {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="title">Back Exercises</h1>
+
+        <!-- 1. LAT PULLDOWN -->
+        <div class="exercise">
+            <img src="https://media.tenor.com/PVR9ra9tAwcAAAAM/pulley-pegada-aberta.gif" alt="Lat Pulldown">
+            <div>
+                <h2>1. Lat Pulldown</h2>
+                <p><strong>Target Muscles:</strong> Lats, Upper Back</p>
+                <h3>How to Perform</h3>
+                <p>Grip bar wide, pull down to upper chest, squeeze lats, return slowly.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>Beginner: 3 × 12</li>
+                    <li>Intermediate: 4 × 10</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Builds wide V-shape back</li>
+                    <li>Beginner friendly</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Leaning back too much reduces effect</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. PULL-UPS -->
+        <div class="exercise">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/pull-up-647dd51506791.gif?resize=980%3A%2A" alt="Pull Ups">
+            <div>
+                <h2>2. Pull-Ups</h2>
+                <p><strong>Target Muscles:</strong> Lats, Upper Back, Biceps</p>
+                <h3>How to Perform</h3>
+                <p>Hang fully, pull chest toward bar, control the descent.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>3–4 × Max reps</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Best bodyweight back exercise</li>
+                    <li>Builds real strength</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Difficult for beginners</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. BARBELL ROW -->
+        <div class="exercise">
+            <img src="https://images.openai.com/static-rsc-3/w6LsFI4pq9KVtnBiT-lhFHA4RDniRb--xTqBiYmyQO9X1AnkIBvtzXLEhjEBJ-Cviy74CCQQdB_sIk2ROljZmLwrdg1wLTa7TjdFLD4OxeU?purpose=fullsize" alt="Barbell Row">
+            <div>
+                <h2>3. Barbell Bent-Over Row</h2>
+                <p><strong>Target Muscles:</strong> Mid-Back, Lats, Traps</p>
+                <h3>How to Perform</h3>
+                <p>Bend at hips, pull bar to stomach, squeeze shoulder blades.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>4 × 8–10</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Adds back thickness</li>
+                    <li>Heavy compound movement</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Lower-back strain if form is wrong</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. SEATED CABLE ROW -->
+        <div class="exercise">
+            <img src="https://i.pinimg.com/originals/a0/1e/6e/a01e6e9ac81f3e913ec42ec5802c13a3.gif" alt="Cable Row">
+            <div>
+                <h2>4. Seated Cable Row</h2>
+                <p><strong>Target Muscles:</strong> Mid-Back, Rhomboids</p>
+                <h3>How to Perform</h3>
+                <p>Pull handle toward waist, squeeze back, control return.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>3–4 × 10–12</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Great muscle control</li>
+                    <li>Lower injury risk</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Less overload than free weights</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5. ONE-ARM DUMBBELL ROW -->
+        <div class="exercise">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/03/standingdumbbellsinglearmsupportedrow-1457045717.gif" alt="Dumbbell Row">
+            <div>
+                <h2>5. One-Arm Dumbbell Row</h2>
+                <p><strong>Target Muscles:</strong> Lats, Lower Back</p>
+                <h3>How to Perform</h3>
+                <p>Support body on bench, pull dumbbell toward hip.</p>
+                <h3>Sets & Reps</h3>
+                <ul>
+                    <li>3 × 10 each side</li>
+                </ul>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Fixes muscle imbalance</li>
+                    <li>Excellent lat isolation</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Time-consuming (one arm at a time)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 🔙 BACK BUTTON -->
+        <div class="back-wrapper">
+            <button class="back-btn" onclick="goBack()">⬅ Back</button>
+        </div>
+
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "Exercise.html";
+        }
+    </script>
+
+</body>
+</html>

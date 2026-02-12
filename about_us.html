@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us – Fitness & Gym Guide</title>
+
+<style>
+:root{
+    --red:#ff3b3b;
+    --orange:#ff9f00;
+    --blue:#00f2fe;
+    --purple:#a855f7;
+    --green:#22c55e;
+    --glass:rgba(255,255,255,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+}
+
+/* NAVBAR */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:14px 40px;
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,0.45);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.navbar h2{
+    color:var(--blue);
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.navbar button{
+    padding:8px 26px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,var(--red),var(--orange));
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    padding:130px 30px 90px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3.9rem;
+    font-weight:900;
+    background:linear-gradient(90deg,var(--red),var(--orange));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    max-width:900px;
+    margin:20px auto;
+    font-size:1.15rem;
+    line-height:1.8;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:40px auto 0;
+}
+
+.stat{
+    background:var(--glass);
+    padding:22px;
+    border-radius:20px;
+    text-align:center;
+    transition:.4s;
+}
+
+.stat:hover{
+    box-shadow:0 0 30px var(--orange);
+    transform:translateY(-6px);
+}
+
+.stat h3{
+    font-size:2.4rem;
+    color:var(--orange);
+}
+
+/* SECTION */
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 30px;
+}
+
+.section-title{
+    font-size:2.3rem;
+    margin-bottom:20px;
+    color:var(--blue);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:var(--glass);
+    padding:26px;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.card:nth-child(1):hover{box-shadow:0 0 35px var(--red);}
+.card:nth-child(2):hover{box-shadow:0 0 35px var(--blue);}
+.card:nth-child(3):hover{box-shadow:0 0 35px var(--purple);}
+.card:nth-child(4):hover{box-shadow:0 0 35px var(--green);}
+.card:nth-child(5):hover{box-shadow:0 0 35px #f97316;}
+.card:nth-child(6):hover{box-shadow:0 0 35px #38bdf8;}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+.card h3{
+    color:#ffcc00;
+    margin-bottom:10px;
+}
+
+/* DEVELOPER */
+.dev-box{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:25px;
+    background:var(--glass);
+    padding:35px;
+    border-radius:22px;
+    transition:.4s;
+}
+
+.dev-box:hover{
+    box-shadow:0 0 45px var(--purple);
+    transform:translateY(-6px);
+}
+
+.dev-box img{
+    width:100%;
+    border-radius:18px;
+    border:2px solid rgba(255,255,255,0.2);
+}
+
+.dev-name{
+    font-size:3rem;
+    font-weight:900;
+    letter-spacing:2px;
+    margin-bottom:10px;
+    background:linear-gradient(90deg,var(--red),var(--orange));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.dev-role{
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--blue);
+    margin-bottom:18px;
+}
+
+.dev-box p{
+    line-height:1.85;
+    font-size:1.05rem;
+}
+
+/* CONTACT INFO */
+.contact-info{
+    margin-top:20px;
+}
+
+.contact-info p{
+    font-size:1.05rem;
+    margin-bottom:8px;
+}
+
+.contact-info span{
+    color:var(--orange);
+    font-weight:700;
+}
+
+/* TECH */
+.tech span{
+    display:inline-block;
+    margin:8px 8px 0 0;
+    padding:10px 18px;
+    border-radius:30px;
+    background:linear-gradient(90deg,var(--red),var(--orange));
+    font-weight:800;
+    font-size:0.85rem;
+}
+
+/* CTA */
+.cta{
+    text-align:center;
+    padding:70px 30px;
+    background:linear-gradient(135deg,var(--red),var(--orange));
+}
+
+.cta h2{
+    font-size:2.6rem;
+    margin-bottom:12px;
+}
+
+.cta button{
+    margin-top:20px;
+    padding:14px 50px;
+    border:none;
+    border-radius:40px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+/* BACK */
+.back-wrapper{
+    text-align:center;
+    padding:40px;
+}
+
+.back-btn{
+    padding:12px 40px;
+    font-weight:900;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(90deg,var(--red),var(--orange));
+    color:#fff;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .dev-box{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2>FITNESS GUIDE</h2>
+    <button onclick="goExercise()">Exercises</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>About Our Fitness Platform</h1>
+    <p>
+        A modern fitness & workout guidance platform designed to combine
+        structured training, accurate form guidance, and clean UI
+        for a real gym-like experience.
+    </p>
+
+    <div class="stats">
+        <div class="stat"><h3>50+</h3><p>Exercises</p></div>
+        <div class="stat"><h3>7</h3><p>Workout Categories</p></div>
+        <div class="stat"><h3>100%</h3><p>Beginner Friendly</p></div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section">
+    <h2 class="section-title">Why Choose This Platform</h2>
+
+    <div class="grid">
+        <div class="card"><h3>💪 Accurate Training</h3><p>Focus on correct form, posture, and muscle activation.</p></div>
+        <div class="card"><h3>🎥 Visual Learning</h3><p>GIF-based demonstrations remove workout confusion.</p></div>
+        <div class="card"><h3>📚 Structured Programs</h3><p>Body-part wise exercise segregation.</p></div>
+        <div class="card"><h3>🛡 Injury Awareness</h3><p>Pros, cons, and safety tips included.</p></div>
+        <div class="card"><h3>⚡ Performance Focus</h3><p>Optimized sets & reps for strength and growth.</p></div>
+        <div class="card"><h3>🎯 Beginner Friendly</h3><p>Clear explanations suitable for all fitness levels.</p></div>
+    </div>
+</section>
+
+<!-- DEVELOPER -->
+<section class="section">
+    <h2 class="section-title">About the Developer</h2>
+
+    <div class="dev-box">
+        <img src="kautilya shukla.jpg" alt="Developer Photo">
+
+        <div>
+            <div class="dev-name">KAUTILYA SHUKLA</div>
+            <div class="dev-role">Frontend Developer | Fitness Enthusiast</div>
+
+            <p>
+                I am a passionate frontend developer focused on building
+                visually engaging, responsive, and user-friendly web applications.
+                This fitness website is a real-world project created to combine
+                web development skills with practical fitness knowledge.
+            </p>
+
+            <p>
+                My aim is to grow as a <strong>Full Stack Developer</strong> by working
+                on meaningful projects that reflect real industry-level design
+                and functionality.
+            </p>
+
+            <div class="contact-info">
+                <p>📧 <span>Email:</span> 2k23.it1a.2310589@gmail.com</p>
+                <p>📞 <span>Contact:</span> +91 9569787754</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TECH -->
+<section class="section">
+    <h2 class="section-title">Technology Used</h2>
+    <div class="tech">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Responsive UI</span>
+        <span>Modern UX</span>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Train Smart. Train Strong.</h2>
+    <button onclick="goExercise()">Start Training</button>
+</section>
+
+<div class="back-wrapper">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+</div>
+
+<script>
+function goBack(){ window.location.href="index.html"; }
+function goExercise(){ window.location.href="Exercise.html"; }
+</script>
+
+</body>
+</html>
